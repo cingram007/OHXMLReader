@@ -1,0 +1,272 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<xs:element name="datis-data-set">
+  <xs:complexType mixed="true">
+    <xs:sequence>
+      <xs:element name="PDSData">
+	<xs:complexType>
+		<xs:all>
+	    		<xs:element name="RecordID" minOccurs = "1" maxOccurs="1">                           
+			<xs:simpleType>
+    			<xs:restriction base="xs:string">	
+      			<xs:pattern value="[0-9]+"/>                    
+ 			</xs:restriction>
+  			</xs:simpleType>
+			</xs:element>
+				<xs:element name="dart" type="xs:string" minOccurs="1" maxOccurs="1"/>  
+				<xs:element name="client_mrn" type="xs:string" minOccurs="1" maxOccurs="1"/>  
+				<xs:element name="episode_id" type="xs:string" minOccurs="1" maxOccurs="1"/>  
+				<xs:element name="referral_no" type="xs:string"/>  
+				<xs:element name="referred_day">  
+					<xs:simpleType>
+    						<xs:restriction base="xs:string">
+						<xs:pattern value="[0-3][0-9]"/> 
+    	 					</xs:restriction>
+  					</xs:simpleType>
+			           </xs:element>
+	     		           <xs:element name="referred_month">
+	       				<xs:simpleType>
+    						<xs:restriction base="xs:string" >	 					<xs:pattern value="[0-1][0-9]"/> 
+					  	</xs:restriction>
+  					</xs:simpleType>
+	    			</xs:element>
+				<xs:element name="referred_year">
+			           	<xs:simpleType>
+    	    					<xs:restriction base="xs:string" >	    					<xs:pattern value="[1-2][0-9][0-9][0-9]"/>     
+    		    				</xs:restriction>
+  					</xs:simpleType>
+				</xs:element>	
+ 				<xs:element name="referral_source_type" type="xs:string"/>     
+				<xs:element name="agency_name" type="xs:string" minOccurs = "1" maxOccurs="1"/>  				
+				<xs:element name="city">    
+					<xs:simpleType>
+    	    					<xs:restriction base="xs:string" >	 					<xs:pattern value="[0-9][0-9][0-9][0-9]"/>        
+    						</xs:restriction>
+  					</xs:simpleType>
+	    			</xs:element>	
+				<xs:element name= "postal_code">  
+  					<xs:simpleType>
+    						<xs:restriction base="xs:string" >	  					
+<!-- <xs:pattern value="[NFA]|[UNK]|[0-9]{5}|[a-zA-Z][0-9][a-zA-Z][0-9][a-zA-Z][0-9]|[a-zA-Z][0-9][a-zA-Z][\][0-9][a-zA-Z][0-9]"/> -->        
+    	    					</xs:restriction>
+ 					</xs:simpleType>
+				</xs:element>   
+			         <xs:element name="DOB_day" minOccurs = "1" maxOccurs="1">        					<xs:simpleType>
+    						<xs:restriction base="xs:string" >	 					<xs:pattern value="[0-3][0-9]"/>          
+ 			      			</xs:restriction>
+  					</xs:simpleType>
+				</xs:element>
+				<xs:element name="DOB_month" minOccurs = "1" maxOccurs="1">
+	        				<xs:simpleType>
+    						<xs:restriction base="xs:string" >						<xs:pattern value="[0-1][0-9]"/>           
+ 			      			</xs:restriction>
+  					</xs:simpleType>
+			           </xs:element>
+				<xs:element name="DOB_year" minOccurs = "1" maxOccurs="1">
+          					<xs:simpleType>
+    	    					<xs:restriction base="xs:string" >	 					<xs:pattern value="[1-2][0-9][0-9][0-9]"/>         
+    			 			</xs:restriction>
+  					</xs:simpleType>
+				</xs:element>	
+				<xs:element name="employment_status" type="xs:string"/> 
+				<xs:element name="gender_id"  minOccurs = "1" maxOccurs="1">  
+     					<xs:simpleType>
+           					<xs:restriction base="xs:string">
+            					<xs:enumeration value="female"/>          
+            					<xs:enumeration value="non-binary"/> 
+            					<xs:enumeration value="male"/>          
+            					<xs:enumeration value="transgender-male"/> 
+           					<xs:enumeration value="transgender-female"/>          
+            					<xs:enumeration value="intersex"/> 
+            					<xs:enumeration value="gender-non-conforming"/>          
+            					<xs:enumeration value="UNK"/> 
+           					<xs:enumeration value="OTH"/> 
+            					<xs:enumeration value="agender"/>          
+          					<xs:enumeration value="asked-declined"/> 
+           					</xs:restriction>
+          				</xs:simpleType>
+				</xs:element>
+				<xs:element name="income_source" type="xs:string"/>
+				<xs:element name="official_language" minOccurs="1" maxOccurs="1">
+				          <xs:simpleType>		
+           			         	<xs:restriction base="xs:string">
+            					<xs:enumeration value="01"/>            
+            					<xs:enumeration value="02"/>    
+            					<xs:enumeration value="03"/>            
+            					<xs:enumeration value="04"/>    
+           					</xs:restriction>
+          				   </xs:simpleType>
+				</xs:element>
+				<xs:element name="mother_tongue1" minOccurs="1" maxOccurs="1">
+          				<xs:simpleType>
+            				<xs:restriction base="xs:string">
+                			<xs:enumeration value="01"/>    <!-- English -->
+                			<xs:enumeration value="02"/>    <!-- French -->
+                			<xs:enumeration value="03"/>    <!-- Other --> 
+           				</xs:restriction>
+         	 		</xs:simpleType>
+				</xs:element>
+				<xs:element name="mother_tongue2" minOccurs="0" maxOccurs="1">
+          				<xs:simpleType>
+            				<xs:restriction base="xs:string">
+                			<xs:enumeration value="01"/>    <!-- English -->
+                			<xs:enumeration value="02"/>    <!-- French -->
+                			<xs:enumeration value="03"/>    <!-- Other --> 
+					<xs:enumeration value=""/>      <!-- empty -->
+           				</xs:restriction>
+         	 		</xs:simpleType>
+				</xs:element>
+				<xs:element name="mother_tongue3" minOccurs="0" maxOccurs="1">
+          				<xs:simpleType>
+            				<xs:restriction base="xs:string">
+                			<xs:enumeration value="01"/>    <!-- English -->
+                			<xs:enumeration value="02"/>    <!-- French -->
+                			<xs:enumeration value="03"/>    <!-- Other --> 
+					<xs:enumeration value=""/>      <!-- empty -->
+           				</xs:restriction>
+         	 		</xs:simpleType>
+				</xs:element>
+				<xs:element name="mother_tongue4" minOccurs="0" maxOccurs="1">
+          				<xs:simpleType>
+            				<xs:restriction base="xs:string">
+                			<xs:enumeration value="01"/>    <!-- English -->
+                			<xs:enumeration value="02"/>    <!-- French -->
+                			<xs:enumeration value="03"/>    <!-- Other --> 
+					<xs:enumeration value=""/>      <!-- empty -->
+           				</xs:restriction>
+         	 		</xs:simpleType>
+				</xs:element>
+				<xs:element name="mother_tongue5" minOccurs="0" maxOccurs="1">
+          				<xs:simpleType>
+            				<xs:restriction base="xs:string">
+                			<xs:enumeration value="01"/>    <!-- English -->
+                			<xs:enumeration value="02"/>    <!-- French -->
+                			<xs:enumeration value="03"/>    <!-- Other --> 
+					<xs:enumeration value=""/>      <!-- empty -->
+           				</xs:restriction>
+         	 		</xs:simpleType>
+				</xs:element>
+				<xs:element name="legal_status1" type="xs:string"/>
+				<xs:element name="legal_status2" type="xs:string"/>
+				<xs:element name="legal_status3" type="xs:string"/>
+				<xs:element name="legal_status4" type="xs:string"/>
+				<xs:element name="legal_status5" type="xs:string"/>
+				<xs:element name="education_id"  minOccurs="1" maxOccurs="1">
+					<xs:simpleType>
+ 					<xs:restriction base="xs:string" >
+    					<xs:pattern value="([0][1-9])"/>       <!-- range of 88 or [01-09] -->
+					<xs:pattern value="88"/>
+ 					</xs:restriction>
+  				</xs:simpleType>
+				</xs:element>
+				<xs:element name="service_termination_d" >             
+					<xs:simpleType>
+    					<xs:restriction base="xs:string" >	   					
+					<xs:pattern value="[0-3][0-9]"/>                 
+ 			 		</xs:restriction>
+  					</xs:simpleType>
+				</xs:element>
+				<xs:element name="service_termination_hh" >          	    		    		<xs:simpleType>
+    						<xs:restriction base="xs:string" >	   					<xs:pattern value="[0-2][0-9]"/>                 
+		 				</xs:restriction>
+  					</xs:simpleType>
+				</xs:element>
+	 		           <xs:element name="service_termination_m">    
+					<xs:simpleType>
+    						<xs:restriction base="xs:string" >						<xs:pattern value="[0-1][0-9]"/>              
+		 				</xs:restriction>
+  					</xs:simpleType>
+				</xs:element>
+				<xs:element name="service_termination_mm">
+					<xs:simpleType>
+    						<xs:restriction base="xs:string" >						<xs:pattern value="[0-5][0-9]"/>                 
+ 						</xs:restriction>
+	  				</xs:simpleType>
+				</xs:element>
+			           <xs:element name="service_termination_y">
+					<xs:simpleType>
+    						<xs:restriction base="xs:string" >	   			     		<xs:pattern value="[1-2][0-9][0-9][0-9]"/>          						</xs:restriction>
+  					</xs:simpleType>
+				</xs:element>		
+				<xs:element name="program_name" type="xs:string" minOccurs = "1" maxOccurs="1"/> 	
+				<xs:element name="program_id" type="xs:string" minOccurs = "1" maxOccurs="1"/> 			    
+				<xs:element name="service_initiation_d" minOccurs = "1" maxOccurs="1">          		    			<xs:simpleType>
+    						<xs:restriction base="xs:string" >	   					<xs:pattern value="[0-3][0-9]"/>               
+						</xs:restriction>  
+ 					</xs:simpleType>
+				</xs:element>
+				<xs:element name="service_initiation_hh"  minOccurs = "1" maxOccurs="1">          		    			<xs:simpleType>
+    						<xs:restriction base="xs:string" >	  					<xs:pattern value="[0-2][0-9]"/>                 						</xs:restriction>
+  					</xs:simpleType>
+				</xs:element>
+	 		        <xs:element name="service_initiation_m" minOccurs = "1" maxOccurs="1">          		    			<xs:simpleType>
+    						<xs:restriction base="xs:string" >	    					<xs:pattern value="[0-1][0-9]"/>                 						</xs:restriction>
+  					</xs:simpleType>
+				</xs:element>
+			         <xs:element name="service_initiation_mm" minOccurs = "1" maxOccurs="1">					<xs:simpleType>
+    						<xs:restriction base="xs:string" >						<xs:pattern value="[0-5][0-9]"/>                 						</xs:restriction>	
+  					</xs:simpleType>
+				</xs:element>
+			         <xs:element name="service_initiation_y" minOccurs = "1" maxOccurs="1">					<xs:simpleType>
+    						<xs:restriction base="xs:string" >	 			     		<xs:pattern value="[1-2][0-9][0-9][0-9]"/>          						</xs:restriction>
+  					</xs:simpleType>
+				</xs:element>		
+				<xs:element name="fc_code" type="xs:string"  minOccurs="1" maxOccurs="1"/>  
+				<xs:element name="program_discharge_reason" type="xs:string"/>
+				<xs:element name="marital_status">  
+ 					<xs:simpleType>
+           					<xs:restriction base="xs:string">
+            					<xs:enumeration value="A"/>           
+            					<xs:enumeration value="D"/>    
+          					<xs:enumeration value="I"/>    
+            					<xs:enumeration value="L"/>    
+            					<xs:enumeration value="M"/>    
+            					<xs:enumeration value="P"/>    
+           					<xs:enumeration value="S"/>            
+            					<xs:enumeration value="T"/>    
+           					<xs:enumeration value="U"/>          
+            					<xs:enumeration value="W"/>    
+            					</xs:restriction>
+          					</xs:simpleType>
+				</xs:element>
+        				<xs:element name="activity_id" type="xs:string"  minOccurs="1" maxOccurs="1"/>  
+				<xs:element name="service_modality" type="xs:string"/>       
+				<xs:element name="service_modality_type" type="xs:string"/>  
+				<xs:element name="indirect_minutes" type="xs:string"/>  
+				<xs:element name="direct_minutes" type="xs:string"/>  
+				<xs:element name="encounter_d">     
+					<xs:simpleType>
+		    				<xs:restriction base="xs:string" >	   					<xs:pattern value="[0-3][0-9]"/>               						</xs:restriction>
+  					</xs:simpleType>
+				</xs:element>
+				<xs:element name="encounter_hh">          	   				<xs:simpleType>
+    						<xs:restriction base="xs:string" >	 					<xs:pattern value="[0-2][0-9]"/>                
+ 						</xs:restriction>
+  				          </xs:simpleType>
+				</xs:element>
+	 			<xs:element name="encounter_m">          						<xs:simpleType>
+    						<xs:restriction base="xs:string" >	   					<xs:pattern value="[0-1][0-9]"/>                
+		 				</xs:restriction>
+  					</xs:simpleType>
+				</xs:element>
+				<xs:element name="encounter_mm">
+					<xs:simpleType>
+    						<xs:restriction base="xs:string" >						<xs:pattern value="[0-5][0-9]"/>                 
+ 						</xs:restriction>
+  					</xs:simpleType>
+				</xs:element>
+				<xs:element name="encounter_y">
+					<xs:simpleType>
+    						<xs:restriction base="xs:string" >						<xs:pattern value="[1-2][0-9][0-9][0-9]"/>       
+    						</xs:restriction>
+  					</xs:simpleType>
+				</xs:element>	
+				<xs:element name="agency_group_id" type="xs:string"/>  
+				<xs:element name="encounter_status" type="xs:string"  minOccurs="1" maxOccurs="1"/>
+   			</xs:all>
+		</xs:complexType>
+	      </xs:element>
+      	</xs:sequence>
+    </xs:complexType>
+</xs:element>
+</xs:schema>

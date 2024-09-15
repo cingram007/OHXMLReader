@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.0" xmlns="http://java.sun.com/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd">
+    
+ <persistence-unit name="DATASOURCE" transaction-type="RESOURCE_LOCAL">
+    <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+    <exclude-unlisted-classes>false</exclude-unlisted-classes>
+    <shared-cache-mode>NONE</shared-cache-mode>
+    <!--  <mapping-file>META-INF/orm.xml</mapping-file> -->
+    <properties>
+      <!-- changed to user to other than datis --> 
+      <property name="javax.persistence.jdbc.url" value="jdbc:oracle:thin:@datisodatest-scan:1521/testd"/>
+      <property name="javax.persistence.jdbc.driver" value="oracle.jdbc.OracleDriver"/>	  
+      <property name="javax.persistence.jdbc.user" value="OH2DATIS_INTERFACE"/>
+      <property name="javax.persistence.jdbc.password" value="Ts8F5E1z0o4i"/>
+    </properties>
+  </persistence-unit>
+  <persistence-unit name="PUPROD" transaction-type="RESOURCE_LOCAL">
+    <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+    <exclude-unlisted-classes>false</exclude-unlisted-classes>
+    <shared-cache-mode>NONE</shared-cache-mode>
+    <!--  <mapping-file>META-INF/orm.xml</mapping-file> -->
+    <properties>
+      <!-- changed to user to other than datis --> 
+      <property name="javax.persistence.jdbc.url" value="jdbc:oracle:thin:@datisoda-scan:1521/datis"/>
+	  <property name="javax.persistence.jdbc.driver" value="oracle.jdbc.OracleDriver"/>
+      <property name="javax.persistence.jdbc.user" value="OH2DATIS_INTERFACE"/>      
+      <property name="javax.persistence.jdbc.password" value="B4342660F32F3AC84756CC86DF2E3103"/>
+    </properties>
+  </persistence-unit>
+
+</persistence>
